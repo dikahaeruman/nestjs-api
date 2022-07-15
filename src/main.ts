@@ -16,7 +16,7 @@ async function bootstrap() {
           format: winston.format.combine(
             winston.format.timestamp(),
             winston.format.ms(),
-            nestWinstonModuleUtilities.format.nestLike('nestj-api', {}),
+            nestWinstonModuleUtilities.format.nestLike('nestjs-api', {}),
           ),
         }),
       ],

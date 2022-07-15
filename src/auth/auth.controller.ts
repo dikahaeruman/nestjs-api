@@ -20,4 +20,14 @@ export class AuthController {
 
     return this.authService.signup(dto);
   }
+
+  @Post('signin')
+  signin(@Body() dto: AuthDto, @Ip() clientIP: string) {
+    this.logger.log(
+      this.loggerUtils.logController('POST /auth/signin', dto.email, clientIP),
+      AuthController.name,
+    );
+
+    return this.authService.signin(dto);
+  }
 }
